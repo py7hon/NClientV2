@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/downloaded"
+            android:icon="@drawable/ic_file"
+            android:title="@string/downloaded_manga" />
+        <item
+            android:id="@+id/random"
+            android:icon="@drawable/ic_shuffle"
+            android:title="@string/random_manga"
+            />
+        <item
+            android:id="@+id/favorite_manager"
+            android:icon="@drawable/ic_favorite"
+            android:title="@string/favorite_manga" />
+        <item
+            android:id="@+id/online_favorite_manager"
+            android:icon="@drawable/ic_star"
+            android:title="@string/online_favorite_manga" />
+        <item
+            android:id="@+id/tag_manager"
+            android:icon="@drawable/ic_hashtag"
+            android:title="@string/manage_tags" />
+
+    </group>
+    <item android:title="@string/settings">
+        <menu>
+            <group android:checkableBehavior="none">
+                <item android:title="@string/settings"
+                android:icon="@drawable/ic_settings"
+                android:id="@+id/action_settings"/>
+                <item android:title="@string/login"
+                    android:icon="@drawable/ic_person"
+                    android:id="@+id/action_login"/>
+            </group>
+        </menu>
+    </item>
+</menu>

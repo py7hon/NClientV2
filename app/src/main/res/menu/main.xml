@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/tag_manager"
+        android:icon="@drawable/ic_help"
+        android:title="@string/update_tag_status"
+        android:visible="false"
+        app:showAsAction="ifRoom|collapseActionView" />
+    <item
+        android:id="@+id/only_language"
+        android:title="@string/all_languages"
+        app:showAsAction="ifRoom|collapseActionView"/>
+    <item
+        android:id="@+id/by_popular"
+        android:title="@string/sort_popular"
+        app:showAsAction="ifRoom|collapseActionView"/>
+    <item
+        android:id="@+id/open_browser"
+        android:icon="@drawable/ic_world"
+        android:title="@string/open_in_browser"
+        app:showAsAction="ifRoom|collapseActionView" />
+</menu>
