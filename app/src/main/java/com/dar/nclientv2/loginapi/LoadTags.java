@@ -34,8 +34,8 @@ public class LoadTags extends Thread {
     public void run() {
         super.run();
         if(Login.getUser()==null)return;
-        Log.d(Global.LOGTAG,String.format("Creating blacklist of: https://id.nhent.ai/users/%d/%s/blacklist",Login.getUser().getId(),Login.getUser().getCodename()));
-        Global.client.newCall(new Request.Builder().url(String.format(Locale.US,"https://id.nhent.ai/users/%s/%s/blacklist",Login.getUser().getId(),Login.getUser().getCodename())).build()).enqueue(new Callback() {
+        Log.d(Global.LOGTAG,String.format("Creating blacklist of: https://nh-express-git-master.rayriffy.now.sh/users/%d/%s/blacklist",Login.getUser().getId(),Login.getUser().getCodename()));
+        Global.client.newCall(new Request.Builder().url(String.format(Locale.US,"https://nh-express-git-master.rayriffy.now.sh/users/%s/%s/blacklist",Login.getUser().getId(),Login.getUser().getCodename())).build()).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {
 
@@ -44,7 +44,7 @@ public class LoadTags extends Thread {
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 Login.clearOnlineTags();
-                Elements x= Jsoup.parse(response.body().byteStream(),null,"https://id.nhent.ai/").getElementsByTag("script");
+                Elements x= Jsoup.parse(response.body().byteStream(),null,"https://nh-express-git-master.rayriffy.now.sh/").getElementsByTag("script");
                 if(x.size()>0) {
                     String t = x.last().toString();
                     t=t.substring(t.indexOf('['), t.indexOf(';'));
