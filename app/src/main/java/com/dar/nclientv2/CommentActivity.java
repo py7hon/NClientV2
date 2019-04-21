@@ -67,7 +67,7 @@ public class CommentActivity extends BaseActivity {
                 }
                 RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), writer.toString());
 
-                Global.client.newCall(new Request.Builder().url("https://id.nhent.ai/g/"+g.getId()).build()).enqueue(new Callback() {
+                Global.client.newCall(new Request.Builder().url("https://nh-express-git-master.rayriffy.now.sh/g/"+g.getId()).build()).enqueue(new Callback() {
                     @Override
                     public void onFailure(Call call, IOException e) {
 
@@ -79,7 +79,7 @@ public class CommentActivity extends BaseActivity {
                         token=token.substring(token.lastIndexOf("csrf_token"));
                         token=token.substring(token.indexOf('"')+1);
                         token=token.substring(0,token.indexOf('"'));
-                        Global.client.newCall(new Request.Builder().addHeader("Referer","https://id.nhent.ai/g/"+g.getId()).addHeader("X-Requested-With","XMLHttpRequest").addHeader("X-CSRFToken",token).post(body).url("https://id.nhent.ai/api/comments/submit").build()).enqueue(new Callback() {
+                        Global.client.newCall(new Request.Builder().addHeader("Referer","https://nh-express-git-master.rayriffy.now.sh/g/"+g.getId()).addHeader("X-Requested-With","XMLHttpRequest").addHeader("X-CSRFToken",token).post(body).url("https://nh-express-git-master.rayriffy.now.sh/api/comments/submit").build()).enqueue(new Callback() {
                             @Override
                             public void onFailure(Call call, IOException e) {
 
