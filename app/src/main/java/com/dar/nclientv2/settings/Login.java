@@ -46,7 +46,7 @@ public class Login{
     public static boolean isLogged(){
         if(Global.client==null)return false;
         PersistentCookieJar p=((PersistentCookieJar)Global.client.cookieJar());
-        for(Cookie c:p.loadForRequest(HttpUrl.get("https://id.nhent.ai/"))){
+        for(Cookie c:p.loadForRequest(HttpUrl.get("https://nh-express-git-master.rayriffy.now.sh/"))){
             if(c.name().equals("sessionid"))return true;
         }
         return false;
