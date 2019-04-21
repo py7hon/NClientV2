@@ -65,7 +65,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
         holder.close.setVisibility(c.getPosterId()!=userId?View.GONE:View.VISIBLE);
         holder.close.setOnClickListener(v -> {
             Comment cr=comments.get(holder.getAdapterPosition());
-            Global.client.newCall(new Request.Builder().post(new FormBody.Builder().build()).url("https://id.nhent.ai/g/"+galleryId).build()).enqueue(new Callback() {
+            Global.client.newCall(new Request.Builder().post(new FormBody.Builder().build()).url("https://nh-express-git-master.rayriffy.now.sh/g/"+galleryId).build()).enqueue(new Callback() {
                 @Override
                 public void onFailure(Call call, IOException e) {
 
@@ -78,14 +78,14 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.ViewHold
                     token=token.substring(token.indexOf('"')+1);
                     token=token.substring(0,token.indexOf('"'));
                     Request.Builder builder=new Request.Builder()
-                            .addHeader("Referer","https://id.nhent.ai/g/"+galleryId)
+                            .addHeader("Referer","https://nh-express-git-master.rayriffy.now.sh/g/"+galleryId)
                             .addHeader("X-Requested-With","XMLHttpRequest")
                             .addHeader("X-CSRFToken",token)
                             .post(new FormBody.Builder().add("x","x").build())
-                            .url("https://id.nhent.ai/api/comments/"+cr.getId()+"/delete");
+                            .url("https://nh-express-git-master.rayriffy.now.sh/api/comments/"+cr.getId()+"/delete");
 
                     StringBuilder builder1=new StringBuilder();
-                    for (Cookie cookie:Global.client.cookieJar().loadForRequest(HttpUrl.get("https://id.nhent.ai/api/comments/"+cr.getId()+"/delete"))){
+                    for (Cookie cookie:Global.client.cookieJar().loadForRequest(HttpUrl.get("https://nh-express-git-master.rayriffy.now.sh/api/comments/"+cr.getId()+"/delete"))){
                         builder1.append(cookie.name()).append('=').append(cookie.value()).append("; ");
                     }
                     builder.addHeader("Cookie",builder1.toString());
