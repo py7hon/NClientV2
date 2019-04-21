@@ -155,7 +155,7 @@ public class GalleryActivity extends BaseActivity{
 
         switch (id){
             case R.id.add_online_gallery:
-                if(gallery!=null)Global.client.newCall(new Request.Builder().url("https://id.nhent.ai/g/"+gallery.getId()+"/favorite").build()).enqueue(new Callback() {
+                if(gallery!=null)Global.client.newCall(new Request.Builder().url("https://nh-express-git-master.rayriffy.now.sh/g/"+gallery.getId()+"/favorite").build()).enqueue(new Callback() {
                     @Override
                     public void onFailure(@NonNull Call call,@NonNull IOException e) {}
 
