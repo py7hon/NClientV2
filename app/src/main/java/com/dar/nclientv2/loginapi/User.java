@@ -24,14 +24,14 @@ public class User {
         void onCreateUser(User user);
     }
     public static void createUser(final CreateUser createUser){
-        Global.client.newCall(new Request.Builder().url("https://id.nhent.ai/").build()).enqueue(new Callback() {
+        Global.client.newCall(new Request.Builder().url("https://nh-express-git-master.rayriffy.now.sh/").build()).enqueue(new Callback() {
             @Override
             public void onFailure(@NonNull Call call, @NonNull IOException e) {}
 
             @Override
             public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
                 User user=null;
-                Document doc= Jsoup.parse(response.body().byteStream(),null,"https://id.nhent.ai/");
+                Document doc= Jsoup.parse(response.body().byteStream(),null,"https://nh-express-git-master.rayriffy.now.sh/");
                 Elements elements=doc.getElementsByClass("fa-tachometer");
                 if(elements.size()>0) {
                     Element x = elements.first().parent();
