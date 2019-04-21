@@ -69,7 +69,7 @@ public class Inspector {
     }
     public String getUsableURL(){
         ApiRequestType requestType=this.requestType;
-        StringBuilder builder = new StringBuilder("https://id.nhent.ai/");
+        StringBuilder builder = new StringBuilder("https://nh-express-git-master.rayriffy.now.sh/");
         String tagQuery=TagV2.getQueryString(query,tags);
         Log.d(Global.LOGTAG,"TAGQUR: "+tagQuery);
         Log.d(Global.LOGTAG,Global.getRemoveIgnoredGalleries()+","+Global.isOnlyTag()+","+requestType);
@@ -136,7 +136,7 @@ public class Inspector {
             @Override
             public void onResponse(@NonNull Call call,@NonNull Response response) throws IOException {
                 Log.d(Global.LOGTAG,"Response of "+url);
-                Document d=Jsoup.parse(response.body().byteStream(),"UTF-8","https://id.nhent.ai");
+                Document d=Jsoup.parse(response.body().byteStream(),"UTF-8","https://nh-express-git-master.rayriffy.now.sh");
                 parseGalleries(d.getElementsByTag("script"),d.getElementsByClass("gallery"),requestType==ApiRequestType.BYSINGLE? parseComments(d.getElementById("comments")):null);
                 for (Gallery x:galleries)if(x.getId()>Global.getMaxId())Global.updateMaxId(activity,x.getId());
                 Elements elements=d.getElementsByClass("last");
