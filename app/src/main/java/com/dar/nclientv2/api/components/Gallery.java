@@ -219,7 +219,7 @@ public class Gallery extends GenericGallery{
 
     public void loadRelated(GalleryAdapter adapter){
         if(isRelatedLoaded())return;
-        String url=String.format(Locale.US,"https://id.nhent.ai/g/%d",adapter.getGallery().getId());
+        String url=String.format(Locale.US,"https://nh-express-git-master.rayriffy.now.sh/g/%d",adapter.getGallery().getId());
         Global.client.newCall(new Request.Builder().url(url).build()).enqueue(new Callback(){
             @Override
             public void onFailure(Call call, IOException e){
@@ -228,7 +228,7 @@ public class Gallery extends GenericGallery{
 
             @Override
             public void onResponse(Call call, Response response) throws IOException{
-                related=Inspector.parseGalleries(Jsoup.parse(response.body().byteStream(),"UTF-8","https://id.nhent.ai").getElementsByClass("gallery"),ApiRequestType.RELATED);
+                related=Inspector.parseGalleries(Jsoup.parse(response.body().byteStream(),"UTF-8","https://nh-express-git-master.rayriffy.now.sh").getElementsByClass("gallery"),ApiRequestType.RELATED);
             }
         });
     }
@@ -508,10 +508,10 @@ public class Gallery extends GenericGallery{
         return getTag(type.ordinal(),index);
     }
     public static Gallery galleryFromId(int id) throws IOException{
-        String url="https://id.nhent.ai/g/"+id;
+        String url="https://nh-express-git-master.rayriffy.now.sh/g/"+id;
         Log.d(Global.LOGTAG,url);
         Response response=Global.client.newCall(new Request.Builder().url(url).build()).execute();
-        Document document=Jsoup.parse(response.body().byteStream(),"UTF-8","https://id.nhent.ai");
+        Document document=Jsoup.parse(response.body().byteStream(),"UTF-8","https://nh-express-git-master.rayriffy.now.sh");
         return Inspector.parseGalleries(document.getElementsByTag("script"),ApiRequestType.BYSINGLE).get(0);
     }
     public boolean hasIgnoredTags(String s){
