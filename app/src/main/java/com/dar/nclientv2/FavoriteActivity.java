@@ -85,7 +85,7 @@ public class FavoriteActivity extends BaseActivity {
         Intent i;
         switch (item.getItemId()){
             case R.id.open_browser:
-                i=new Intent(Intent.ACTION_VIEW, Uri.parse("https://id.nhent.ai/favorites/"));
+                i=new Intent(Intent.ACTION_VIEW, Uri.parse("https://nh-express-git-master.rayriffy.now.sh/favorites/"));
                 startActivity(i);
         }
         return super.onOptionsItemSelected(item);
