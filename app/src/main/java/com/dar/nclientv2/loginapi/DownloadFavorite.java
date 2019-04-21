@@ -38,7 +38,7 @@ public class DownloadFavorite extends Thread{
         int page=1;
         //Retrive favorite
         do {
-            final String url = "https://id.nhent.ai/favorites/?page=" + page;
+            final String url = "https://nh-express-git-master.rayriffy.now.sh/favorites/?page=" + page;
             Log.d(Global.LOGTAG,"Downloading online favorites: "+url);
             try{
                 //download page from user favorite
