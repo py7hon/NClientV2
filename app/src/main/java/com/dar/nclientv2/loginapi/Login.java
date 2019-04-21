@@ -23,7 +23,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class Login {
-    private static final String base_url="https://id.nhent.ai/";
+    private static final String base_url="https://nh-express-git-master.rayriffy.now.sh/";
     private static final String login_url=base_url+"login/";
     private static final String logout_url=base_url+"logout/";
     public static void clear(){
